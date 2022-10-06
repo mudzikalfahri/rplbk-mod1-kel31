@@ -45,3 +45,21 @@ const renderData = (data) => {
     listElement.appendChild(itemElement);
   });
 };
+
+searchElement.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    const filteredData = data.filter((item) => {
+      // filter by name
+      const name = item.nama_lengkap.toLowerCase();
+      const search = searchValue.toLowerCase();
+      return name.includes(search);
+    });
+    if (!filteredData.length) {
+      const content = document.querySelector("#content");
+      content.innerHTML = "Data tidak ditemukan";
+      return;
+    }
+
+    renderData(filteredData);
+  }
+});
