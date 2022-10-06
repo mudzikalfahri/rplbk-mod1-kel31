@@ -26,3 +26,22 @@ const data = [
     hobi: "Billiard",
   },
 ];
+
+const renderData = (data) => {
+  const listElement = document.querySelector("#content");
+  listElement.innerHTML = "";
+  data.forEach((item) => {
+    const itemElement = document.createElement("li");
+    itemElement.innerHTML = `
+        <h2>${item.nama_lengkap}</h2>
+        <p>${item.nama_panggilan}</p>
+        <p>${item.nomor_telepon}</p>
+        <p>${item.id_line}</p>
+        <p>${item.tanggal_lahir}</p>
+        <p>${item.nim}</p>
+        <p>${item.email}</p>
+        <p>${item.hobi}</p>
+        `;
+    listElement.appendChild(itemElement);
+  });
+};
