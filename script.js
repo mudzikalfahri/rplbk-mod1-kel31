@@ -1,6 +1,6 @@
 const data = [
   {
-    nama_lengkap: "Yohanes Kukuh Niti Cahya Bagaskara",
+    nama_lengkap: "Yohanes Kukuh Niti Cahya Bagaskaraa",
     nama_panggilan: "Bagas",
     nomor_telepon: "081393566854",
     id_line: "bagaskukuh_",
