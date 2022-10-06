@@ -1,3 +1,9 @@
+const searchElement = document.querySelector("#input");
+let searchValue = "";
+searchElement.addEventListener("input", (event) => {
+  searchValue = event.target.value;
+});
+
 const data = [
   {
     nama_lengkap: "Yohanes Kukuh Niti Cahya Bagaskara",
