@@ -27,6 +27,21 @@ const data = [
   },
 ];
 
+const btn = document.querySelector("#btn");
+btn.addEventListener("click", () => {
+  const filteredData = data.filter((item) => {
+    const name = item.nama_lengkap.toLowerCase();
+    const search = searchValue.toLowerCase();
+    return name.includes(search);
+  });
+  if (!filteredData.length) {
+    const content = document.querySelector("#content");
+    content.innerHTML = "Data tidak ditemukan";
+    return;
+  }
+  renderData(filteredData);
+});
+
 const renderData = (data) => {
   const listElement = document.querySelector("#content");
   listElement.innerHTML = "";
@@ -63,3 +78,4 @@ searchElement.addEventListener("keydown", (e) => {
     renderData(filteredData);
   }
 });
+
